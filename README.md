@@ -1,12 +1,12 @@
 # Distributed Tic Tac Toe
 
-Three Spring Boot microservices playing Tic Tac Toe against each other automatically.
+A distributed Tic Tac Toe application composed of two Spring Boot backend services and a Spring Boot UI that automatically simulates a game between two players.
 
 ```
-game-common            - shared enums, ApiError and web error-handling boilerplate (not a Spring Boot app)
-game-engine-service   (port 8081) - board state, move validation, win/draw detection
-game-session-service  (port 8082) - session lifecycle, automated move generation, calls the engine
-game-ui               (port 8083) - static browser UI, drives the session service and renders the game
+game-common           - shared library
+game-engine-service   - (port 8081) - board state, move validation, win/draw detection
+game-session-service  - (port 8082) - session lifecycle, automated move generation, calls the engine
+game-ui               - (port 8083) - static browser UI, drives the session service and renders the game
 ```
 
 ## API
@@ -55,6 +55,9 @@ generated automatically from the controllers:
       until the engine reports `X_WON`, `O_WON`, or `DRAW`.
 3. The full move history and final board are returned to the UI, which replays the moves with a short
    delay between each to visualize the game as it "was played."
+   The current implementation uses a replay-based visualization: the session service completes the simulation 
+   and returns the move history, while the UI replays the moves with a short delay. Real-time server push via 
+   SSE/WebSockets is intentionally left as an optional enhancement.
 4. `GET /sessions/{sessionId}` can be polled at any time to retrieve session state and move history.
 
 ## Architecture
@@ -65,7 +68,7 @@ services. Both backend services follow the same layered package structure:
 ```
 com.khalamai.tictactoe.<service>/
 ├── domain/
-│   ├── entity/     plain JPA entities (@Getter/@Setter, no business logic - see below)
+│   ├── entity/     JPA entities are used purely for persistence
 │   ├── enums/      service-specific enums only (shared ones live in game-common)
 │   └── exception/  flat, each extends RuntimeException directly
 ├── dto/            request/response records, sparse board representation (occupied cells only)
