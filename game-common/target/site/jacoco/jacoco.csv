@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+game-common,com.khalamai.tictactoe.common.domain.enums,Symbol,0,22,0,2,0,3,0,3,0,2
+game-common,com.khalamai.tictactoe.common.domain.enums,GameStatus,0,34,0,2,0,6,0,3,0,2
+game-common,com.khalamai.tictactoe.common.web.error,ApiError,0,25,0,0,0,2,0,2,0,2
+game-common,com.khalamai.tictactoe.common.web.error,AbstractExceptionHandler,0,45,0,0,0,10,0,6,0,6

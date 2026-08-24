@@ -1,0 +1,6 @@
+com/khalamai/tictactoe/gameengine/GameServiceConcurrencyIntegrationTest.class
+com/khalamai/tictactoe/gameengine/GameServiceIntegrationTest.class
+com/khalamai/tictactoe/gameengine/service/impl/BoardServiceImplTest.class
+com/khalamai/tictactoe/gameengine/web/GameControllerTest.class
+com/khalamai/tictactoe/gameengine/service/impl/WinDetectorServiceImplTest.class
+com/khalamai/tictactoe/gameengine/service/GameServiceTest.class

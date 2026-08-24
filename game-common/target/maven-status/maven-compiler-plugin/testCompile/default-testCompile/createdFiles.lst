@@ -1,0 +1,6 @@
+com/khalamai/tictactoe/common/web/error/ApiErrorTest.class
+com/khalamai/tictactoe/common/domain/enums/SymbolTest.class
+com/khalamai/tictactoe/common/domain/enums/GameStatusTest.class
+com/khalamai/tictactoe/common/domain/BoardTest.class
+com/khalamai/tictactoe/common/web/error/AbstractExceptionHandlerTest$1.class
+com/khalamai/tictactoe/common/web/error/AbstractExceptionHandlerTest.class

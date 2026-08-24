@@ -1,0 +1,5 @@
+/Users/sofiiakhalamai/Desktop/projects/distributed-tic-tac-toe/game-common/src/main/java/com/khalamai/tictactoe/common/domain/Board.java
+/Users/sofiiakhalamai/Desktop/projects/distributed-tic-tac-toe/game-common/src/main/java/com/khalamai/tictactoe/common/domain/enums/GameStatus.java
+/Users/sofiiakhalamai/Desktop/projects/distributed-tic-tac-toe/game-common/src/main/java/com/khalamai/tictactoe/common/domain/enums/Symbol.java
+/Users/sofiiakhalamai/Desktop/projects/distributed-tic-tac-toe/game-common/src/main/java/com/khalamai/tictactoe/common/web/error/AbstractExceptionHandler.java
+/Users/sofiiakhalamai/Desktop/projects/distributed-tic-tac-toe/game-common/src/main/java/com/khalamai/tictactoe/common/web/error/ApiError.java

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameResponseMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">game-engine-service</a> &gt; <a href="index.source.html" class="el_package">com.khalamai.tictactoe.gameengine.service.mapper</a> &gt; <span class="el_source">GameResponseMapperImpl.java</span></div><h1>GameResponseMapperImpl.java</h1><pre class="source lang-java linenums">package com.khalamai.tictactoe.gameengine.service.mapper;
+
+import com.khalamai.tictactoe.common.domain.enums.GameStatus;
+import com.khalamai.tictactoe.common.domain.enums.Symbol;
+import com.khalamai.tictactoe.gameengine.domain.entity.Game;
+import com.khalamai.tictactoe.gameengine.dto.CellResponse;
+import com.khalamai.tictactoe.gameengine.dto.GameResponse;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;,
+    date = &quot;2026-08-24T15:24:19+0200&quot;,
+    comments = &quot;version: 1.6.3, compiler: javac, environment: Java 21.0.12 (Azul Systems, Inc.)&quot;
+)
+@Component
+<span class="fc" id="L18">public class GameResponseMapperImpl implements GameResponseMapper {</span>
+
+    @Override
+    public GameResponse toResponse(Game game) {
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">        if ( game == null ) {</span>
+<span class="nc" id="L23">            return null;</span>
+        }
+
+<span class="fc" id="L26">        String gameId = null;</span>
+<span class="fc" id="L27">        GameStatus status = null;</span>
+
+<span class="fc" id="L29">        gameId = game.getGameId();</span>
+<span class="fc" id="L30">        status = game.getStatus();</span>
+
+<span class="fc" id="L32">        List&lt;CellResponse&gt; board = toCellResponses(game.getCells());</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        Symbol nextTurn = game.getStatus().isFinished() ? null : game.getNextTurn();</span>
+
+<span class="fc" id="L35">        GameResponse gameResponse = new GameResponse( gameId, board, status, nextTurn );</span>
+
+<span class="fc" id="L37">        return gameResponse;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

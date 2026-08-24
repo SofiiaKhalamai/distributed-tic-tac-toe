@@ -1,0 +1,6 @@
+com/khalamai/tictactoe/gamesession/service/SessionServiceTest.class
+com/khalamai/tictactoe/gamesession/SessionServiceIntegrationTest.class
+com/khalamai/tictactoe/gamesession/web/SessionControllerTest.class
+com/khalamai/tictactoe/gamesession/CrossServiceIntegrationTest.class
+com/khalamai/tictactoe/gamesession/client/GameEngineClientTest.class
+com/khalamai/tictactoe/gamesession/support/EngineBoardFixtures.class

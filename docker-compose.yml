@@ -1,0 +1,27 @@
+services:
+  game-engine:
+    build:
+      context: .
+      dockerfile: game-engine-service/Dockerfile
+    ports:
+      - "8081:8081"
+
+  game-session:
+    build:
+      context: .
+      dockerfile: game-session-service/Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      GAME_ENGINE_BASE_URL: http://game-engine:8081
+    depends_on:
+      - game-engine
+
+  game-ui:
+    build:
+      context: .
+      dockerfile: game-ui/Dockerfile
+    ports:
+      - "8083:8083"
+    depends_on:
+      - game-session
