@@ -31,6 +31,16 @@ A move to an already-occupied cell, an out-of-turn move, or a move on a finished
 
 If the engine is unreachable, the session service returns `502 Bad Gateway`.
 
+### Swagger / OpenAPI
+
+Both backend services expose interactive API docs via [springdoc-openapi](https://springdoc.org/),
+generated automatically from the controllers:
+
+| Service | Swagger UI |
+|---|---|
+| game-engine-service | http://localhost:8081/swagger-ui/index.html |
+| game-session-service | http://localhost:8082/swagger-ui/index.html |
+
 ## How it works
 
 1. UI calls `POST /sessions` on the session service - a session row is created; the game in the
